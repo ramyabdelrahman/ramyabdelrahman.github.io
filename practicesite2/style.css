@@ -30,7 +30,7 @@ main {
     margin: 30px auto;
 }
 
-section, article {
+section, article, aside {
     background-color: #ffffff;
     padding: 25px;
     margin-bottom: 25px;
