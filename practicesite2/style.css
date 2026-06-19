@@ -93,6 +93,10 @@ img {
     border: 1px solid #cccccc;
 }
 
+.project-photo {
+    max-width: 85%;
+}
+
 figure {
     text-align: center;
     margin: 20px auto;
@@ -164,5 +168,9 @@ footer p {
 
     img {
         max-width: 90%;
+    }
+
+    .project-photo {
+        max-width: 95%;
     }
 }
