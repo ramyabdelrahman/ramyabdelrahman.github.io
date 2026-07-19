@@ -314,30 +314,6 @@ main,
   text-align: center;
 }
 
-.home-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.home-main,
-.home-sidebar {
-  min-width: 0;
-}
-
-.home-sidebar .card {
-  padding: 20px;
-}
-
-.home-sidebar h2 {
-  font-size: 1.6rem;
-}
-
-.home-sidebar h3 {
-  font-size: 1.2rem;
-}
-
 .linkedin-panel {
   text-align: center;
 }
@@ -439,10 +415,6 @@ footer a:focus {
 
   .hero,
   .split {
-    grid-template-columns: 1fr;
-  }
-
-  .home-layout {
     grid-template-columns: 1fr;
   }
 
@@ -679,84 +651,6 @@ footer a:focus {
 	}
 }
 
-.contact-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 24px;
-	margin-bottom: 24px;
-}
-
-.contact-panel {
-	margin-bottom: 0;
-}
-
-.contact-interest-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 24px;
-	margin-top: 24px;
-}
-
-.contact-interest-grid section {
-	padding: 20px;
-	background: var(--sky-50);
-}
-
-.contact-interest-grid h3 {
-	margin-top: 0;
-	color: #000000;
-	font-size: 1.3rem;
-}
-
-.contact-interest-grid p {
-	color: #000000;
-	font-size: 1rem;
-	line-height: 1.7;
-}
-
-.contact-social-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 24px;
-	margin-bottom: 24px;
-	align-items: start;
-}
-
-.contact-blog,
-.contact-linkedin {
-	margin-bottom: 0;
-}
-
-.contact-blog .blog-window {
-	height: 500px;
-}
-
-.contact-linkedin {
-	text-align: center;
-}
-
-.contact-linkedin p {
-	line-height: 1.7;
-}
-
-@media (max-width: 850px) {
-	.contact-grid,
-	.contact-interest-grid,
-	.contact-social-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.contact-blog .blog-window {
-		height: 500px;
-	}
-}
-
-@media (max-width: 540px) {
-	.contact-blog .blog-window {
-		height: 420px;
-	}
-}
-
 .contact-page-grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -968,5 +862,262 @@ footer a:focus {
 
 	.contact-blog .blog-window {
 		height: 420px;
+	}
+}
+
+/* ==================================================
+   RESPONSIVE HOME PAGE
+   ================================================== */
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+/* Keep the home page within the available width */
+.home-page {
+	width: 100%;
+	min-width: 0;
+}
+
+/* Personal introduction */
+.home-hero {
+	grid-template-columns: minmax(230px, 34%) minmax(0, 1fr);
+	gap: 34px;
+	align-items: center;
+}
+
+.home-hero figure,
+.home-hero .hero-content {
+	min-width: 0;
+}
+
+.home-hero .hero-photo {
+	width: 100%;
+	max-height: 450px;
+	object-fit: cover;
+	object-position: center 18%;
+}
+
+.home-hero h2 {
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	line-height: 1.2;
+}
+
+.home-hero p {
+	max-width: 760px;
+}
+
+/* Short professional summary */
+.professional-summary {
+	width: 100%;
+}
+
+.professional-summary > p {
+	max-width: 1000px;
+	margin-bottom: 24px;
+}
+
+.focus-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.focus-item {
+	min-width: 0;
+	padding: 20px;
+	background: var(--sky-50);
+}
+
+.focus-item h3 {
+	margin-top: 0;
+	font-size: 1.25rem;
+}
+
+.focus-item p {
+	margin-bottom: 0;
+}
+
+/* Blog occupies two thirds and LinkedIn one third */
+.home-connections {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+	gap: 24px;
+	align-items: stretch;
+	width: 100%;
+}
+
+.home-connections > section {
+	min-width: 0;
+	margin-bottom: 24px;
+}
+
+.home-blog {
+	display: flex;
+	flex-direction: column;
+}
+
+.home-blog-window {
+	width: 100%;
+	height: 600px;
+	min-height: 500px;
+	border: 0;
+	background: var(--white);
+}
+
+.home-blog .blog-link {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+/* LinkedIn panel */
+.home-linkedin {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 28px 22px;
+	text-align: center;
+}
+
+.home-linkedin h2 {
+	margin-bottom: 8px;
+	font-size: 1.7rem;
+}
+
+.home-linkedin h3 {
+	margin: 0 0 18px;
+	font-size: 1.25rem;
+}
+
+.home-linkedin p {
+	width: 100%;
+}
+
+.home-linkedin .linkedin-focus {
+	margin-top: 18px;
+	padding: 16px;
+	background: var(--sky-50);
+	line-height: 1.7;
+}
+
+.home-linkedin .linkedin-link {
+	margin-top: auto;
+	padding-top: 20px;
+}
+
+.home-linkedin .linkedin-button {
+	max-width: 100%;
+	white-space: normal;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+	.home-hero {
+		grid-template-columns: minmax(200px, 38%) minmax(0, 1fr);
+		gap: 24px;
+	}
+
+	.focus-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.home-connections {
+		grid-template-columns: minmax(0, 3fr) minmax(230px, 2fr);
+		gap: 18px;
+	}
+
+	.home-blog-window {
+		height: 520px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+	.home-hero {
+		grid-template-columns: 1fr;
+	}
+
+	.home-hero figure {
+		width: min(100%, 430px);
+		margin: 0 auto;
+	}
+
+	.home-hero .hero-photo {
+		max-height: 520px;
+	}
+
+	.home-hero .hero-content {
+		width: 100%;
+	}
+
+	.home-connections {
+		grid-template-columns: 1fr;
+	}
+
+	.home-blog {
+		order: 1;
+	}
+
+	.home-linkedin {
+		order: 2;
+	}
+
+	.home-blog-window {
+		height: 500px;
+		min-height: 0;
+	}
+
+	.actions {
+		width: 100%;
+	}
+
+	.actions .button {
+		text-align: center;
+	}
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+	.home-hero,
+	.professional-summary,
+	.home-blog,
+	.home-linkedin {
+		padding: 18px;
+	}
+
+	.home-hero h2 {
+		font-size: 1.7rem;
+	}
+
+	.professional-summary h2 {
+		font-size: 1.65rem;
+	}
+
+	.focus-item {
+		padding: 16px;
+	}
+
+	.home-blog-window {
+		height: 420px;
+	}
+
+	.actions {
+		flex-direction: column;
+	}
+
+	.actions .button {
+		display: block;
+		width: 100%;
+	}
+
+	.linkedin-button {
+		display: block;
+		width: 100%;
+	}
+
+	.home-linkedin .linkedin-focus {
+		padding: 13px;
 	}
 }
