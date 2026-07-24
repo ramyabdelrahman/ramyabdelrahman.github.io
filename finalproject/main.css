@@ -3,7 +3,7 @@
 :root {
   --sky-900: #075985;
   --sky-800: #0369a1;
-  --sky-700: #0284c7;
+  --sky-700: #0369a1;
   --sky-500: #0ea5e9;
   --sky-300: #7dd3fc;
   --sky-100: #e0f2fe;
@@ -79,7 +79,7 @@ body > header h1 {
   grid-template-columns: minmax(0, 1fr);
   gap: 0;
   width: min(1180px, 92%);
-  margin: var(--header-height) auto var(--footer-height);
+  margin: var(--header-height) auto 0;
   padding: 0 0 38px;
 }
 
@@ -228,6 +228,7 @@ main,
   font-weight: 700;
   text-decoration: none;
   border-radius: 9px;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .button-primary {
@@ -236,8 +237,9 @@ main,
 }
 
 .button-secondary {
-  color: var(--sky-800);
-  background: var(--white);
+  color: var(--sky-900);
+  background: var(--sky-100);
+  border: 2px solid var(--sky-700);
 }
 
 .button:hover,
@@ -304,7 +306,7 @@ main,
 .blog-window {
   display: block;
   width: 100%;
-  height: 430px;
+  height: 600px;
   background: var(--white);
   border: 0;
 }
@@ -343,7 +345,7 @@ main,
 }
 
 footer {
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   z-index: 1000;
@@ -351,9 +353,9 @@ footer {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  min-height: var(--footer-height);
+  min-height: auto;
   padding: 14px 4%;
-  color: #000000;
+  color: #ffffff;
   background: var(--sky-700);
 }
 
@@ -369,7 +371,7 @@ footer li {
 }
 
 footer a {
-  color: #000000;
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1120,4 +1122,52 @@ body {
 	.home-linkedin .linkedin-focus {
 		padding: 13px;
 	}
+}
+
+.leadership-wrap {
+  display: flow-root;
+}
+
+.leadership-wrap figure {
+  float: left;
+  width: 55%;
+  margin: 0 28px 18px 0;
+}
+
+.leadership-wrap .feature-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.leadership-wrap section {
+  display: block;
+}
+
+.leadership-wrap section p:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .leadership-wrap figure {
+    float: none;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .leadership-wrap .feature-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #111827;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px #ffffff;
 }
